@@ -1,0 +1,59 @@
+﻿/* app */
+.bam-app {
+    text-align: center;
+}
+
+/* navigation */
+
+.bam-routes {
+    margin: 0;
+    padding: 0;
+}
+
+.bam-route {
+    display: inline-block;
+}
+
+.bam-route a,
+.bam-route a:hover,
+.bam-route a:visited {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    min-width: 100px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* chat */
+
+.chat-fields {
+    display: table;
+    margin: 0 auto;
+}
+
+.chat-field {
+    display: table-row;
+}
+
+.chat-label,
+.chat-input {
+    display: table-cell;
+}
+
+.chat-input {
+    padding: 5px;
+}
+
+.chat-validation {
+    text-align: left;
+}
+
+.chat-message {
+    padding: 10px;
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+    width: 400px;
+    margin: 5px auto;
+}
