@@ -1,0 +1,7 @@
+<h1>Home Page</h1>
+
+<ul class="bam-routes">
+    <li ng-repeat="route in vm.routes" class="bam-route">
+        <a ng-attr-ui-sref="{{route.name}}">{{route.displayName}}</a>
+    </li>
+</ul>
