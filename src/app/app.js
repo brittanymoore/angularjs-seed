@@ -1,5 +1,17 @@
 import angular from 'angular';
 
+// modules
+import appChat from './chat/chat.module';
+import appHome from './home/home.module';
+import appMock from './mock/mock.module';
+
+// routing
+import uiRouter from 'angular-ui-router';
+import routes from './app.routes';
+
+// styles
+import './app.css';
+
 let app = () => {
   return {
     template: require('./app.html'),
@@ -10,14 +22,17 @@ let app = () => {
 
 class AppCtrl {
   constructor() {
-    this.value = 3;
+    this.title = "Vertex";
+    this.routes = routes.routeList;
+    this.value = 3; // sanity test value (karma)
   }
 }
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, [ uiRouter, appHome, appChat, appMock ])
   .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
+  .controller('AppCtrl', AppCtrl)
+  .config( routes.config );
 
 export default MODULE_NAME;
