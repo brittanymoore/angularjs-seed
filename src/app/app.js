@@ -1,40 +1,23 @@
-'use strict';
+import angular from 'angular';
 
-require('./home/index');
-require('./chat/index');
-require('./mock/index');
+let app = () => {
+  return {
+    template: require('./app.html'),
+    controller: 'AppCtrl',
+    controllerAs: 'app'
+  }
+};
 
-var app = angular.module('app', [
-    'ui.router',
-    'app.home',
-    'app.chat'
-])
-// routes
-.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-
-    $locationProvider.hashPrefix(''); // eliminate ! in url paths
-
-    $urlRouterProvider.otherwise("/");
-
-    $stateProvider
-        .state('home', {
-            url: '/',
-            template: require('./home/home.html'),
-            controller: 'HomeController',
-            controllerAs: 'vm'
-        })
-        .state('chat', {
-            url: '/chat',
-            template: require('./chat/chat.html'),
-            controller: 'ChatController',
-            controllerAs: 'vm'
-        }); 
-        
-});
-
-// use mock in development environment
-if (process.env.ENV == 'development') {
-    app.requires.push("app.mock");
+class AppCtrl {
+  constructor() {
+    this.value = 3;
+  }
 }
 
-module.exports = app;
+const MODULE_NAME = 'app';
+
+angular.module(MODULE_NAME, [])
+  .directive('app', app)
+  .controller('AppCtrl', AppCtrl);
+
+export default MODULE_NAME;
