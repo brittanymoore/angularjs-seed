@@ -1,8 +1,8 @@
 import angular from 'angular';
 
 // modules
-import appChat from './chat/chat.module';
 import appHome from './home/home.module';
+import appToDo from './todo/todo.module';
 import appMock from './mock/mock.module';
 
 // routing
@@ -30,7 +30,7 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [ uiRouter, appHome, appChat, appMock ])
+angular.module(MODULE_NAME, [ uiRouter, appHome, appToDo, appMock ])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl)
   .config( routes.config );

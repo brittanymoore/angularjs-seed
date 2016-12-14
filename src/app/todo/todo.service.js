@@ -3,12 +3,15 @@ class ChatService {
     //static $inject = ['$http'];
     constructor($http) {
         this.$http = $http;
+        this.name = "";
+        this.toDoUrl = "/sites/customsites/bam" + "/_api/web/lists/getByTitle('Tasks')/items";
+        this.resultFilters = "?$select=Name,ID";
     }
 
-    getMessages() {
+    getTasks() {
         return this.$http({
             method: "GET",
-            url: "/sites/customsites/bam" + "/_api/web/lists/getByTitle('ChatMessages')/items?$select=Name,Message",
+            url: this.toDoUrl + this.resultFilters,
             headers: { "Accept": "application/json;odata=verbose" }
         }).then(function (response) {
             return response.data.d.results;
@@ -17,17 +20,16 @@ class ChatService {
         });
     }
 
-    addMessage(message) {
+    addTask(name) {
 
         var requestDigestElem = document.getElementById("__REQUESTDIGEST");
         var requestDigest = (requestDigestElem != null) ? requestDigestElem.value : "";
 
         return this.$http({
             method: "POST",
-            url: "/sites/customsites/bam" + "/_api/web/lists/getByTitle('ChatMessages')/items",
+            url: this.toDoUrl,
             data: {
-                Name: message.Name,
-                Message: message.Message,
+                Name: name,
                 __metadata: {
                     type: "SP.Data.ChatMessagesListItem"
                 }

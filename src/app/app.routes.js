@@ -1,5 +1,5 @@
 import homeTemplate from './home/home.html';
-import chatTemplate from './chat/chat.html';
+import toDoTemplate from './todo/todo.html';
 
 var routes = {
     config: function ($stateProvider, $urlRouterProvider) {
@@ -11,23 +11,13 @@ var routes = {
                 controller: 'HomeController',
                 controllerAs: 'vm'
             })
-            .state('chat', {
-                url: '/chat',
-                template: chatTemplate,
-                controller: 'ChatController',
+            .state('todo', {
+                url: '/todo',
+                template: toDoTemplate,
+                controller: 'ToDoController',
                 controllerAs: 'vm'
             });
-    },
-    routeList: [
-         {
-            name: "home",
-            displayName: "Home"
-         },
-         {
-             name: "chat",
-             displayName: "Chat"
-         }
-    ]
+    }
 };
 
 export default routes;

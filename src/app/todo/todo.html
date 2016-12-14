@@ -1,0 +1,25 @@
+<h2>{{vm.title}}</h2>
+
+<div>
+
+    <form name="vm.form" form="form" ng-submit="vm.addTask()">
+
+        <h3>Add New Task</h3>
+
+        <p>
+            <label for="name">Task Name:</label>
+            <input type="text" ng-model="vm.name" name="name" required />
+        </p>
+        <p>
+            <input type="submit" value="Submit" ng-disabled="vm.form.$invalid" />
+        </p>
+
+    </form>
+
+    <ul>
+        <li ng-repeat="task in vm.tasks">
+            <div>{{task.Name}}</div>
+        </li>
+    </ul>
+
+</div>
