@@ -1,0 +1,23 @@
+<h2>{{vm.title}}</h2>
+
+<div>
+
+    <form name="vm.form" form="form">
+
+        <div ng-show="vm.form.$submitted && vm.form.$error">There were errors on submit.</div>
+
+        <!--<form-field ng-repeat="propertySet in vm.properties" properties="propertySet" form="vm.form" ng-model="vm.myModel"></form-field>     -->
+        <form-field properties="vm.properties[0]" form="vm.form" ng-model="vm.myModel"></form-field> 
+        <form-field properties="vm.properties[1]" form="vm.form" ng-model="vm.myModel"></form-field> 
+
+        <input type="submit" value="Submit" ng-click="vm.onSubmit()" />
+
+    </form>
+    <!--<div my-form ng-model="vm.myModel">
+        <label for='myString'>myString:</label>
+        <input my-form-field id="myString" ng-model="vm.myModel.myString" properties="vm.properties[0]"></input>
+    </div>-->
+
+</div>
+
+myModel: { myString = {{vm.myModel.myString}}, myUrl = {{vm.myModel.myUrl}} }

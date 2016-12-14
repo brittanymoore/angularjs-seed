@@ -1,0 +1,83 @@
+/* Form Styles*/
+
+.form-group {
+    display: table;
+    width: 100%;
+}
+
+.form-group .form-control {
+    display: table-row;
+}
+
+.form-control label,
+.form-control .form-control-group {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.form-control label {
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.form-control .form-control-group {
+    padding: 5px 5px 5px 20px;
+    width: 100%;
+}
+
+.form-control input[type=text],
+.form-control input[type=date],
+.form-control textarea {
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0. .085);
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-control input[type=text],
+.form-control textarea {
+    width: 100%;
+    max-width: 700px;
+}
+
+.form-buttons {
+    text-align: right;
+}
+
+.form-required {
+    color: #a94442;
+}
+
+@media (max-width: 500px) {
+
+    .form-group,
+    .form-group .form-control,
+    .form-control label,
+    .form-control .form-control-group {
+        display: block;
+        width: 100%;
+    }
+
+    .form-control {
+        padding: 5px 0;
+    }
+
+    .form-control label {
+        text-align: left;
+    }
+
+    .form-control .form-control-group {
+        padding: 0;
+    }
+
+    .form-control input,
+    .form-control textarea {
+        max-width: none;
+    }
+
+}
+
+
