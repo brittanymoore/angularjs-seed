@@ -3,13 +3,12 @@
     "version": "0.0.1",
     "description": "seed project for angularJS",
     "scripts": {
-        "build": "webpack --bail --progress --profile",
-        "start": "webpack-dev-server --history-api-fallback --inline --progress",
-        "test": "karma start",
+        "build": "webpack --bail --progress --profile --config ./config/webpack.config.js",
+        "start": "webpack-dev-server --history-api-fallback --inline --progress --config ./config/webpack.config.js",
+        "test": "karma start ./config/karma.conf.js",
         "webdriver-manager": "webdriver-manager",
-        "webdriver:update": "npm run webdriver-manager update",
-        "protractor": "protractor",
-        "test:e2e": "npm run protractor"
+        "webdriver:update": "webdriver-manager update",
+        "test:e2e": "protractor ./config/protractor.conf.js"
     },
     "author": "Brittany Moore",
     "license": "MIT",
@@ -36,6 +35,9 @@
         "karma-spec-reporter": "^0.0.26",
         "karma-webpack": "1.8.0",
         "protractor": "^4.0.10"
+    },
+    "babel": {
+        "presets": ["es2015"]
     },
     "repository": {
         "type": "git",

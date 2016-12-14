@@ -8,7 +8,7 @@ module.exports = {
         app: './src/app/app.js'
     },
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + './../dev',
         publicPath: '',
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js'
@@ -28,7 +28,7 @@ module.exports = {
         })
     ],
     devServer: {
-        contentBase: './dist',
+        contentBase: './dev',
         stats: 'minimal',
         port: 3000
     }

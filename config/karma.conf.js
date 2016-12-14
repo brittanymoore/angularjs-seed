@@ -7,9 +7,9 @@ module.exports = function (config) {
     config.set({
         frameworks: ['jasmine'],
         reporters: ['spec'],
-        files: ['src/tests.webpack.js'],
+        files: ['./../src/tests.webpack.js'],
         preprocessors: {
-            'src/tests.webpack.js': ['webpack', 'sourcemap']
+            './../src/tests.webpack.js': ['webpack', 'sourcemap']
         },
         browsers: ['Chrome'],
         singleRun: true,
