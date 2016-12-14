@@ -5,7 +5,11 @@
     "scripts": {
         "build": "webpack --bail --progress --profile",
         "start": "webpack-dev-server --history-api-fallback --inline --progress",
-        "test": "karma start"
+        "test": "karma start",
+        "webdriver-manager": "webdriver-manager",
+        "webdriver:update": "npm run webdriver-manager update",
+        "protractor": "protractor",
+        "test:e2e": "npm run protractor"
     },
     "author": "Brittany Moore",
     "license": "MIT",
@@ -30,7 +34,8 @@
         "karma-jasmine": "^0.3.5",
         "karma-sourcemap-loader": "^0.3.7",
         "karma-spec-reporter": "^0.0.26",
-        "karma-webpack": "1.8.0"
+        "karma-webpack": "1.8.0",
+        "protractor": "^4.0.10"
     },
     "repository": {
         "type": "git",
