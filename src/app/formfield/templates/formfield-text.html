@@ -1,10 +1,9 @@
 <label ng-attr-for="{{properties.id}}">
     {{properties.fieldLabel}}
-    <span class="form-required" ng-show="properties.required">*</span>
+    <span ng-class="{ required: true, hidden: !properties.required }">*</span>
 </label>
 <div class="form-control-group">
-    <input ng-attr-name="{{properties.id}}" ng-attr-type="{{properties.fieldType}}" ng-attr-id="{{properties.id}}" ng-model="value[properties.key]"
-           ng-attr-required="{{properties.required}}" ng-attr-maxlength="{{properties.maxlength}}" />
-    <div>{{form[properties.id].$error}}</div>
+    <input ng-attr-name="{{properties.id}}" ng-attr-type="{{properties.fieldType}}" ng-attr-id="{{properties.id}}" ng-model="model[properties.key]"
+           ng-attr-required="properties.required" ng-attr-maxlength="{{properties.maxlength}}" ng-disabled="properties.disabled" form-field-validation />
     <div ng-show="form.$submitted && form[properties.id].$error" ng-include="messageUrl"></div>
 </div>

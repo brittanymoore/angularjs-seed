@@ -26,6 +26,10 @@
     width: 100%;
 }
 
+.form-control input[type=checkbox] {
+    vertical-align: middle;
+}
+
 .form-control input[type=text],
 .form-control input[type=date],
 .form-control textarea {
@@ -47,8 +51,32 @@
     text-align: right;
 }
 
-.form-required {
+.form-control .required {
     color: #a94442;
+}
+
+.form-control .hidden {
+    visibility: hidden;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border-color: #cccccc;
+    color: #333333;
+}
+
+.btn:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333333;
 }
 
 @media (max-width: 500px) {

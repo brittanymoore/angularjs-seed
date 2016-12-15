@@ -1,7 +1,8 @@
 class TestFormController {
 
-    constructor() {
-        this.title = "Test Form";
+    constructor($scope) {
+        this.scope = $scope;
+        this.title = "Form Field Demo";
         this.myModel = {};
         this.properties = this.getFieldProperties();
     }
@@ -13,11 +14,19 @@ class TestFormController {
     getFieldProperties() {
         return [
             {
-                fieldLabel: "myString:",
+                fieldLabel: "myString",
                 fieldType: "text",
                 id: 'my-string',
                 key: 'myString',
-                required: true
+                required: true,
+                expressionProperties: {
+                    'disabled': function(viewValue, modelValue, scope) {
+                        return scope.model.myBoolean;
+                    },
+                    'required': function(viewValue, modelValue, scope) {
+                        return !scope.model.myBoolean;
+                    }
+                }
             },
             {
                 fieldLabel: "myUrl",
@@ -30,7 +39,22 @@ class TestFormController {
                         var value = modelValue || viewValue;
                         return /^((http[s]?|ftp):\/\/(www\.)?)+((?!www\.)[^:\/\s]+[.][^:\/\s]+)((\/\w+)*\/)*([\w\-\.]+[^#?\s]+)*(.*)?(#[\w\-]+)?$/i.test(value);
                     }
+                },
+                expressionProperties: {
+                    'disabled': function(viewValue, modelValue, scope) {
+                        return scope.model.myBoolean;
+                    },
+                    'required': function(viewValue, modelValue, scope) {
+                        return !scope.model.myBoolean;
+                    }
                 }
+            },
+            {
+                fieldLabel: "myBoolean",
+                fieldType: "checkbox",
+                id: 'my-boolean',
+                key: 'myBoolean',
+                required: true
             }
         ]
     }
