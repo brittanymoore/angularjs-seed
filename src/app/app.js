@@ -4,8 +4,6 @@ import angular from 'angular';
 import appHome from './home/home.module';
 import appToDo from './todo/todo.module';
 import appMock from './mock/mock.module';
-import formfield from './formfield/formfield.module';
-import appTestForm from './testform/testform.module';
 
 // routing
 import uiRouter from 'angular-ui-router';
@@ -32,7 +30,7 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [ uiRouter, appHome, appToDo, appMock, formfield, appTestForm])
+angular.module(MODULE_NAME, [ uiRouter, appHome, appToDo, appMock])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl)
   .config( routes.config );
