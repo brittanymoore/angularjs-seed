@@ -19,8 +19,7 @@ class TestFormController {
                 fieldType: "text",
                 id: 'my-string',
                 key: 'myString',
-                reuquired: true,
-                description: 'This field becomes disabled when myBoolean is checked.',
+                description: 'This field becomes optional when myBoolean is checked.',
                 expressionProperties: {
                     'required': function(viewValue, modelValue, scope) {
                         return !scope.model.myBoolean;
