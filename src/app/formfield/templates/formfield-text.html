@@ -4,6 +4,7 @@
 </label>
 <div class="form-control-group">
     <input ng-attr-name="{{properties.id}}" ng-attr-type="{{properties.fieldType}}" ng-attr-id="{{properties.id}}" ng-model="model[properties.key]"
-           ng-attr-required="properties.required" ng-attr-maxlength="{{properties.maxlength}}" ng-disabled="properties.disabled" form-field-validation />
-    <div ng-show="form.$submitted && form[properties.id].$error" ng-include="messageUrl"></div>
+           ng-required="properties.required" ng-attr-maxlength="{{properties.maxlength}}" ng-disabled="properties.disabled" form-field-validation />
+    <div class="form-error" ng-show="parentForm.$submitted && form[properties.id].$error" ng-include="messageUrl"></div>
+    <div class="form-description">{{properties.description}}</div>
 </div>

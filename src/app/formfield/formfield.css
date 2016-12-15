@@ -51,12 +51,21 @@
     text-align: right;
 }
 
+.form-control .form-description {
+    color: #737373;
+}
+
 .form-control .required {
     color: #a94442;
 }
 
 .form-control .hidden {
     visibility: hidden;
+}
+
+.form-control .form-error {
+    color: #a94442;
+    font-size: .8em;
 }
 
 .btn {

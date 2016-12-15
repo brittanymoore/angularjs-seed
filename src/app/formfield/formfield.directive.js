@@ -1,11 +1,12 @@
 var FormfieldDirective = function (FormfieldService) {
     return {
-        restrict: 'E', // only match attribute name
+        restrict: 'A', // only match attribute name
         replace: true,
         require: 'ngModel',
         scope: {
             properties: '=',
             form: '=',
+            parentForm: '=',
             ngModel: '=' // required for scope.$watch
         },
         link: function (scope, element, attrs, ngModel) {

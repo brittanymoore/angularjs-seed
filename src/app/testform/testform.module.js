@@ -1,5 +1,8 @@
 import TestFormController from './testform.controller';
 
+// styles
+import './testform.css';
+
 let testform = () => {
   return {
     template: require('./testform.html'),
