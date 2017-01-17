@@ -24,7 +24,6 @@ class AppCtrl {
   constructor() {
     this.title = "Vertex";
     this.routes = routes.routeList;
-    this.value = 3; // sanity test value (karma)
   }
 }
 

@@ -1,19 +1,19 @@
 import appToDo from './todo.module';
 import appMock from './../mock/mock.module';
 
-describe("UNIT: ToDo:", function () {
+describe("UNIT: ToDo:", () => {
 
-    beforeEach(function () {
+    beforeEach(() => {
         // mock modules
         angular.mock.module(appToDo);
         angular.mock.module(appMock);
     });
 
-    describe("Controller:", function () {
+    describe("Controller:", () => {
 
         let controller, ToDoService, ToDoMockData, deferred, $rootScope;
 
-        beforeEach(function () {
+        beforeEach(() => {
 
             // inject dependencies
             angular.mock.inject(($controller, _ToDoService_, _ToDoMockData_, $q, _$rootScope_) => {
@@ -34,26 +34,30 @@ describe("UNIT: ToDo:", function () {
 
         });
 
-        it("Sanity Check", function () {
-            expect(0).toBe(0);
+        describe("Get Tasks:", () => {
+
+            it("Should call service to get tasks.", () => {
+                controller.getTasks();
+                expect(ToDoService.getTasks).toHaveBeenCalled();
+            });
+
+            it("Should set internal tasks variable based on service results.", () => {
+                controller.getTasks();
+                deferred.resolve(ToDoMockData.getTasks());
+                $rootScope.$digest();
+                expect(controller.tasks.length).toBe(ToDoMockData.tasks.length);
+            });
+
         });
 
-        it("Get Tasks Call Service", function () {
-            controller.getTasks();
-            expect(ToDoService.getTasks).toHaveBeenCalled();
-        });
+        describe("Add Message:", () => {
 
-        it("Get Tasks Handle Data", function () {
-            controller.getTasks();
-            deferred.resolve(ToDoMockData.getTasks());
-            $rootScope.$digest();
-            expect(controller.tasks.length).toBe(ToDoMockData.tasks.length);
-        });
+            it("Should call service to add task.", () => {
+                controller.name = "Test thing to do";
+                controller.addTask();
+                expect(ToDoService.addTask).toHaveBeenCalled();
+            });
 
-        it("Add Message Call Service", function () {
-            controller.name = "Test thing to do";
-            controller.addTask();
-            expect(ToDoService.addTask).toHaveBeenCalled();
         });
 
     });

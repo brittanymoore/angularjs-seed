@@ -1,9 +1,9 @@
-var webpackConfig = require('./webpack.config');
+var webpackConfig = require('./webpack.dev.config');
 // remove entry / output to prevent webpack errors
 webpackConfig.entry = {};
 webpackConfig.output = {};
 
-module.exports = function (config) {
+module.exports = (config) => {
     config.set({
         frameworks: ['jasmine'],
         reporters: ['spec'],

@@ -1,20 +1,22 @@
 import app from './app';
 
-describe('app', () => {
+describe("app:", () => {
 
-  describe('AppCtrl', () => {
-    let ctrl;
+    describe("App Controller:", () => {
 
-    beforeEach(() => {
-      angular.mock.module(app);
+        let controller;
 
-      angular.mock.inject(($controller) => {
-        ctrl = $controller('AppCtrl', {});
-      });
+        beforeEach(() => {       
+            angular.mock.module(app);
+            angular.mock.inject(($controller) => {
+                controller = $controller('AppCtrl', {});
+            });
+        });
+
+        it("Should set the title value on controller.", () => {
+            expect(controller.title).toBe("Vertex");
+        });
+
     });
 
-    it('should contain a starter value', () => {
-      expect(ctrl.value).toBe(3);
-    });
-  });
 });

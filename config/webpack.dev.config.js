@@ -23,7 +23,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Vertex - Angular1',
+            title: 'Vertex - AngularJS',
             template: './config/index.template.ejs'
         })
     ],

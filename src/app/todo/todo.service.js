@@ -13,17 +13,17 @@ class ChatService {
             method: "GET",
             url: this.toDoUrl + this.resultFilters,
             headers: { "Accept": "application/json;odata=verbose" }
-        }).then(function (response) {
+        }).then((response) => {
             return response.data.d.results;
-        }).catch(function () {
+        }).catch(() => {
             console.log("fail");
         });
     }
 
     addTask(name) {
 
-        var requestDigestElem = document.getElementById("__REQUESTDIGEST");
-        var requestDigest = (requestDigestElem != null) ? requestDigestElem.value : "";
+        let requestDigestElem = document.getElementById("__REQUESTDIGEST");
+        let requestDigest = (requestDigestElem != null) ? requestDigestElem.value : "";
 
         return this.$http({
             method: "POST",
@@ -39,14 +39,16 @@ class ChatService {
                 "Accept": "application/json;odata=verbose",
                 "X-RequestDigest": requestDigest
             }              
-        }).then(function (response) {
+        }).then((response) => {
             return response.data.d.results;
-        }).catch(function () {
+        }).catch(() => {
             console.log("fail");
         });
 
     }
 
 }
+
+ChatService.$inject = ['$http'];
 
 export default ChatService;

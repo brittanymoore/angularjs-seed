@@ -38,4 +38,6 @@ class ToDoController {
 
 }
 
-export default ToDoController
+ToDoController.$inject = ['ToDoService'];
+
+export default ToDoController;
