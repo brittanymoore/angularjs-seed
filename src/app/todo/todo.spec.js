@@ -50,7 +50,7 @@ describe("UNIT: ToDo:", () => {
 
         });
 
-        describe("Add Message:", () => {
+        describe("Add Task:", () => {
 
             it("Should call service to add task.", () => {
                 controller.name = "Test thing to do";
