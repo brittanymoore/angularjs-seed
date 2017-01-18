@@ -1,25 +1,17 @@
 <h2>{{vm.title}}</h2>
 
-<div>
+<form novalidate name="vm.form" form="form" ng-submit="vm.addTask()">
+    <p>
+        <label for="name">Task Name:</label>
+        <input type="text" ng-model="vm.name" name="name" required />
+    </p>
+    <p>
+        <input id="submit" type="submit" value="Add" ng-disabled="vm.form.$invalid" />
+    </p>
+</form>
 
-    <form novalidate name="vm.form" form="form" ng-submit="vm.addTask()">
-
-        <h3>Add New Task</h3>
-
-        <p>
-            <label for="name">Task Name:</label>
-            <input type="text" ng-model="vm.name" name="name" required />
-        </p>
-        <p>
-            <input id="submit" type="submit" value="Submit" ng-disabled="vm.form.$invalid" />
-        </p>
-
-    </form>
-
-    <ul>
-        <li ng-repeat="task in vm.tasks">
-            <div>{{task.Name}}</div>
-        </li>
-    </ul>
-
-</div>
+<ul id="taskList">
+    <li ng-repeat="task in vm.tasks">
+        <div>{{task.Name}}</div>
+    </li>
+</ul>
