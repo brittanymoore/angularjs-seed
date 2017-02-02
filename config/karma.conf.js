@@ -1,6 +1,5 @@
 var webpackConfig = require('./webpack.dev.config');
-// remove entry / output to prevent webpack errors
-webpackConfig.entry = {};
+// remove output to prevent webpack errors
 webpackConfig.output = {};
 
 module.exports = (config) => {

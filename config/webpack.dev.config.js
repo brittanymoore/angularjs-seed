@@ -15,10 +15,10 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        loaders: [
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-            { test: /\.html$/, loader: 'raw' },
-            { test: /\.css$/, loader: 'style!css' }
+        rules: [
+            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.html$/, loader: 'raw-loader' },
+            { test: /\.css$/, loader: 'style-loader!css-loader' }
         ]
     },
     plugins: [

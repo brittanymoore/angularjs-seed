@@ -16,17 +16,17 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        loaders: [
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-            { test: /\.html$/, loader: 'raw' },
-            { test: /\.css$/, loader: 'style!css' }
+        rules: [
+            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.html$/, loader: 'raw-loader' },
+            { test: /\.css$/, loader: 'style-loader!css-loader' }
         ]
     },
     plugins: [
         // FUTURE WORK: consider adding ngAnnotatePlugin to automatically adding
         // di injection annotations.
         new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false }
+            sourceMap: true     
         }),
         new HtmlWebpackPlugin({
             title: 'Vertex - AngularJS',

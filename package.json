@@ -20,8 +20,8 @@
         "angular-mocks": "1.6.1"
     },
     "devDependencies": {
-        "webpack": "1.14.0",
-        "webpack-dev-server": "1.16.2",
+        "webpack": "2.2.0",
+        "webpack-dev-server": "2.2.0",
         "html-webpack-plugin": "2.26.0",
         "raw-loader": "0.5.1",
         "babel-core": "6.21.0",
