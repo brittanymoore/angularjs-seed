@@ -22,6 +22,7 @@
     "devDependencies": {
         "webpack": "2.2.0",
         "webpack-dev-server": "2.2.0",
+        "webpack-merge": "0.15.0",
         "html-webpack-plugin": "2.26.0",
         "raw-loader": "0.5.1",
         "babel-core": "6.21.0",
