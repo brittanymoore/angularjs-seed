@@ -1,20 +1,11 @@
-import HomeController from './home.controller';
+import HomeComponent from './home.component';
 
 // styles
 import './home.css';
 
-let home = () => {
-  return {
-    template: require('./home.html'),
-    controller: 'HomeController',
-    controllerAs: 'vm'
-  }
-};
-
 const MODULE_NAME = 'appHome';
 
 angular.module(MODULE_NAME, [])
-  .directive('home', home)
-  .controller('HomeController', HomeController);
+  .component('home', HomeComponent)
 
 export default MODULE_NAME;

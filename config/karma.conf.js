@@ -6,9 +6,9 @@ module.exports = (config) => {
     config.set({
         frameworks: ['jasmine'],
         reporters: ['spec'],
-        files: ['./../src/tests.webpack.js'],
+        files: ['./karma.test.bundle.js'],
         preprocessors: {
-            './../src/tests.webpack.js': ['webpack', 'sourcemap']
+            './karma.test.bundle.js': ['webpack', 'sourcemap']
         },
         browsers: ['Chrome'],
         singleRun: true,

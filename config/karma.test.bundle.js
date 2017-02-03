@@ -10,6 +10,6 @@ describe("Sanity Check:", () => {
 
 });
 
-// Search for and run all .spec.js files in src.
-const context = require.context('./app', true, /\.spec.js$/);
+// Search for and run all .spec.js files in src/app.
+const context = require.context('./../src/app', true, /\.spec.js$/);
 context.keys().forEach(context);

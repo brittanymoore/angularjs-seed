@@ -16,7 +16,7 @@ describe("UNIT: ToDo:", () => {
         beforeEach(() => {
 
             // inject dependencies
-            angular.mock.inject(($controller, _ToDoService_, _ToDoMockData_, $q, _$rootScope_) => {
+            angular.mock.inject(($componentController, _ToDoService_, _ToDoMockData_, $q, _$rootScope_) => {
                 
                 ToDoService = _ToDoService_;
                 ToDoMockData = _ToDoMockData_;
@@ -27,7 +27,7 @@ describe("UNIT: ToDo:", () => {
                 spyOn(ToDoService, "getTasks").and.returnValue(deferred.promise);
                 spyOn(ToDoService, "addTask").and.returnValue(deferred.promise);
 
-                controller = $controller('ToDoController', {
+                controller = $componentController('todo', {
                     ToDoService: ToDoService
                 });
             }); 

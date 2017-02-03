@@ -1,6 +1,5 @@
 class ChatService {
 
-    //static $inject = ['$http'];
     constructor($http) {
         this.$http = $http;
         this.name = "";
