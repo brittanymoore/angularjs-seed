@@ -1,11 +1,11 @@
 # Vertex
 
-angularjs-vertex is a seed repository for angularjs and webpack. For angular 2 and beyond,
+angularjs-vertex is a seed repository for angularjs and webpack. For angular (2.0+),
 see [angular-vertex](https://github.com/brittanymoore/angular-vertex).
 
-In the future, I may add additional branches with different configurations.
+This repository contains branches with alternate configurations of the seed.
 
-The master branch currently contains:
+The master branch contains:
 * angularJS (1.6.1)
 * webpack (2.2.0)
 * component-based routing with angular-ui-router
