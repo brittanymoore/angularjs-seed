@@ -37,10 +37,8 @@
         "karma-sourcemap-loader": "0.3.7",
         "karma-spec-reporter": "0.0.26",
         "karma-webpack": "2.0.1",
-        "protractor": "4.0.10"             
-    },
-    "babel": {
-        "presets": ["es2015"]
+        "protractor": "5.1.1",
+        "jasmine-spec-reporter": "3.2.0"           
     },
     "repository": {
         "type": "git",

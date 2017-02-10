@@ -9,7 +9,10 @@ exports.config = {
     },
     module: {
         rules: [
-            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+            {
+                test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
+                options: { presets: ['es2015' ]}
+            },
             { test: /\.html$/, loader: 'raw-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]

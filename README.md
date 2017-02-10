@@ -3,7 +3,7 @@
 angularjs-vertex is a seed repository for angularjs and webpack. For angular (2.0+),
 see [angular-vertex](https://github.com/brittanymoore/angular-vertex).
 
-This repository contains branches with alternate configurations of the seed.
+This repository has multiple branches with alternate configurations of the seed.
 
 The master branch contains:
 * angularJS (1.6.1)
@@ -21,7 +21,6 @@ The master branch contains:
 git clone https://github.com/brittanymoore/angularjs-vertex.git
 cd angularjs-vertex
 npm install
-npm run webdriver:update
 ```
 
 ### Launch the App
@@ -36,14 +35,12 @@ Once the server is running, open a browser and navigate to localhost:3000.
 
 ### Build
 
-Vertex currently has three build modes: 
-
 | Build Mode        | Command        | Output   | Uglify |
 | ----------------- | -------------- | -------  | ------ |
 | Dev               | build          | dev      | false  |
 | Prod              | build:prod     | dist     | true   |
 
-Each mode also has a start command that launches the app locally.
+Each mode has a start command that launches webpack-dev-server.
 
 ```
 npm run start
@@ -63,7 +60,10 @@ npm run test:unit
 E2E tests should be added to a file named **.e2e.js somewhere in the app directory tree. To run the tests:
 
 ```
-// run these commands in separate windows
+// first-time setup
+npm run webdriver:update
+
+// run these commands in separate terminals
 npm run start
 npm run test:e2e
 ```
