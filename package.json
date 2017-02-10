@@ -8,8 +8,6 @@
         "start": "webpack-dev-server --history-api-fallback --inline --progress --config ./config/webpack.dev.config.js",
         "start:prod": "webpack-dev-server --history-api-fallback --inline --progress --config ./config/webpack.prod.config.js",
         "test": "karma start ./config/karma.conf.js",
-        "webdriver-manager": "webdriver-manager",
-        "webdriver:update": "webdriver-manager update",
         "test:e2e": "protractor ./config/protractor.conf.js"
     },
     "author": "Brittany Moore",

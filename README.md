@@ -61,7 +61,7 @@ E2E tests should be added to a file named **.e2e.js somewhere in the app directo
 
 ```
 // first-time setup
-npm run webdriver:update
+webdriver-manager update
 
 // run these commands in separate terminals
 npm run start
