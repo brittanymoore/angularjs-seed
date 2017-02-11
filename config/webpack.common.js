@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.config = {
     entry: { 
-        app: './src/app/app.js'
+        app: './src/app/app.module.js'
     },
     module: {
         rules: [
