@@ -1,6 +1,6 @@
 {
     "name": "vertex-angularjs",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "seed project for angularJS",
     "scripts": {
         "build": "webpack --bail --progress --profile --config ./config/webpack.dev.config.js",
@@ -8,6 +8,7 @@
         "start": "webpack-dev-server --history-api-fallback --inline --progress --config ./config/webpack.dev.config.js",
         "start:prod": "webpack-dev-server --history-api-fallback --inline --progress --config ./config/webpack.prod.config.js",
         "test": "karma start ./config/karma.conf.js",
+        "webdriver-manager": "webdriver-manager",
         "test:e2e": "protractor ./config/protractor.conf.js"
     },
     "author": "Brittany Moore",
