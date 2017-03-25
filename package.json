@@ -1,5 +1,5 @@
 {
-    "name": "vertex-angularjs",
+    "name": "angularjs-vertex",
     "version": "1.0.0",
     "description": "seed project for angularJS",
     "scripts": {
@@ -41,6 +41,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/brittanymoore/vertex-angularjs.git"
+        "url": "git+https://github.com/brittanymoore/angularjs-vertex.git"
     }
 }
