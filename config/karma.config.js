@@ -1,17 +1,17 @@
 var webpackConfig = require('./webpack.dev.config');
 // remove output to prevent webpack errors
-webpackConfig.output = {};
 
 module.exports = (config) => {
     config.set({
+        basePath: '',
         frameworks: ['jasmine'],
-        reporters: ['spec'],
         files: ['./karma.test.bundle.js'],
         preprocessors: {
             './karma.test.bundle.js': ['webpack', 'sourcemap']
         },
+        webpack: webpackConfig,
+        reporters: ['spec'],
         browsers: ['Chrome'],
-        singleRun: true,
-        webpack: webpackConfig
-    })
+        singleRun: true
+    });
 }

@@ -4,9 +4,11 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.config = {
+
     entry: { 
         app: './src/app/app.module.js'
     },
+
     module: {
         rules: [
             {
@@ -17,14 +19,17 @@ exports.config = {
             { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
     },
+
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Vertex - AngularJS',
             template: './config/index.template.ejs'
         })
     ],
+
     devServer: {
         stats: 'minimal',
         port: 3000
     }
+    
 }
