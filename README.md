@@ -6,10 +6,10 @@ see [angular-vertex](https://github.com/brittanymoore/angular-vertex).
 This repository has multiple branches with alternate configurations of the seed.
 
 The master branch contains:
-* angularJS (1.6.1)
-* webpack (2.2.0)
-* component-based routing with angular-ui-router
-* ES6 support with babel
+* angularJS
+* webpack
+* component-based routing (@uirouter/angularjs)
+* ES6 support (babel)
 * unit testing with karma
 * end-to-end testing with protractor
 

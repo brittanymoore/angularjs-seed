@@ -3,10 +3,24 @@ var webpack = require('webpack');
 // plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// constants
+const APP_NAME = 'AngularJS Vertex';
+
+exports.apiUrl = '';
+exports.publicPath = '';
+
 exports.config = {
+
     entry: { 
-        app: './src/app/app.js'
+        main: './src/app/app.js'
     },
+
+    output: {
+        filename: '[name].[chunkhash].js',
+        sourceMapFilename: '[name].map',
+        chunkFilename: '[id].chunk.js'
+    },
+
     module: {
         rules: [
             {
@@ -17,14 +31,18 @@ exports.config = {
             { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
     },
+
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Vertex - AngularJS',
-            template: './config/index.template.ejs'
+            title: APP_NAME,
+            template: './config/index.template.ejs',
+            chunksSortMode: 'dependency'            
         })
     ],
+
     devServer: {
         stats: 'minimal',
         port: 3000
     }
+
 }
