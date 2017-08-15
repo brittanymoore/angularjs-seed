@@ -1,4 +1,4 @@
-describe("E2E: ToDo:", () => {
+describe('E2E: ToDo:', () => {
 
     let nameInput, addButton;
 
@@ -14,14 +14,14 @@ describe("E2E: ToDo:", () => {
 
     });
 
-    it("Should disable add button when task field is empty.", () => {
+    it('Should disable add button when task field is empty.', () => {
 
         expect(nameInput.getAttribute('value')).toBe('');
         expect(addButton.isEnabled()).toBe(false);
 
     });
 
-    it("Should enable add button when task field contains a value.", () => {
+    it('Should enable add button when task field contains a value.', () => {
 
         nameInput.sendKeys('test task');
         expect(nameInput.getAttribute('value')).toBe('test task');
@@ -29,7 +29,7 @@ describe("E2E: ToDo:", () => {
 
     });
 
-    it("Should add new task and clear form after add button clicked.", () => {
+    it('Should add new task and clear form after add button clicked.', () => {
 
         // There should be two mock tasks initially.
         let tasks = element.all(by.css('#taskList > li'));

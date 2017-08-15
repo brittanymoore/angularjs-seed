@@ -1,10 +1,10 @@
 class AppController {
     constructor() {
-        this.title = "Vertex";
+        this.title = 'Vertex';
     }
 }
 
-let AppComponent = {
+const AppComponent = {
     template: require('./app.html'),
     controller: AppController,
     controllerAs: 'app'

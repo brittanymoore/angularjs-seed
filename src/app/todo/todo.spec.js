@@ -1,7 +1,7 @@
 import appToDo from './todo.module';
 import appMock from './../mock/mock.module';
 
-describe("UNIT: ToDo:", () => {
+describe('UNIT: ToDo:', () => {
 
     beforeEach(() => {
         // mock modules
@@ -9,7 +9,7 @@ describe("UNIT: ToDo:", () => {
         angular.mock.module(appMock);
     });
 
-    describe("Controller:", () => {
+    describe('Controller:', () => {
 
         let controller, ToDoService, ToDoMockData, deferred, $rootScope;
 
@@ -24,8 +24,8 @@ describe("UNIT: ToDo:", () => {
 
                 // spy on service functions and return promises
                 deferred = $q.defer();
-                spyOn(ToDoService, "getTasks").and.returnValue(deferred.promise);
-                spyOn(ToDoService, "addTask").and.returnValue(deferred.promise);
+                spyOn(ToDoService, 'getTasks').and.returnValue(deferred.promise);
+                spyOn(ToDoService, 'addTask').and.returnValue(deferred.promise);
 
                 controller = $componentController('todo', {
                     ToDoService: ToDoService
@@ -34,14 +34,14 @@ describe("UNIT: ToDo:", () => {
 
         });
 
-        describe("Get Tasks:", () => {
+        describe('Get Tasks:', () => {
 
-            it("Should call service to get tasks.", () => {
+            it('Should call service to get tasks.', () => {
                 controller.getTasks();
                 expect(ToDoService.getTasks).toHaveBeenCalled();
             });
 
-            it("Should set internal tasks variable based on service results.", () => {
+            it('Should set internal tasks variable based on service results.', () => {
                 controller.getTasks();
                 deferred.resolve(ToDoMockData.getTasks());
                 $rootScope.$digest();
@@ -50,10 +50,10 @@ describe("UNIT: ToDo:", () => {
 
         });
 
-        describe("Add Task:", () => {
+        describe('Add Task:', () => {
 
-            it("Should call service to add task.", () => {
-                controller.name = "Test thing to do";
+            it('Should call service to add task.', () => {
+                controller.name = 'Test thing to do';
                 controller.addTask();
                 expect(ToDoService.addTask).toHaveBeenCalled();
             });

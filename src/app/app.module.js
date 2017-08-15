@@ -17,8 +17,8 @@ import './app.css';
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [ uiRouter, appHome, appToDo, appMock])
-  .component('app', AppComponent)
-  .config(routes.config);
+angular.module(MODULE_NAME, [ uiRouter, appHome, appToDo, appMock ])
+    .component('app', AppComponent)
+    .config(routes.config);
 
 export default MODULE_NAME;
