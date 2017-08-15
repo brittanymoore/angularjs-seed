@@ -1,13 +1,12 @@
-var webpack = require('webpack');
-var path = require('path');
-var webpackMerge = require('webpack-merge');
+const webpack = require('webpack');
+const path = require('path');
+const webpackMerge = require('webpack-merge');
 
 // plugins
 const WebpackChunkHash = require('webpack-chunk-hash');
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 
 // common config
-var common = require('./webpack.common');
+const common = require('./webpack.common');
 
 // constants
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
@@ -23,6 +22,22 @@ module.exports = webpackMerge(common.config, {
 
     devtool: 'source-map',
 
+    module: {
+        rules: [
+            { test: /\.css$/, use: [
+                'style-loader',
+                'css-loader?sourceMap=false&importLoaders=1&minimize=true',
+                { loader: 'postcss-loader', options: { config: { path: './config/postcss.config.js' }}}
+            ]},
+            { test: /\.scss$/, use: [
+                'style-loader',
+                'css-loader?sourceMap=false&importLoaders=1&minimize=true',
+                'sass-loader',
+                { loader: 'postcss-loader', options: { config: { path: './config/postcss.config.js' }}}
+            ] }
+        ]
+    },
+
     plugins: [
 
         new webpack.DefinePlugin({
@@ -34,8 +49,8 @@ module.exports = webpackMerge(common.config, {
 
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            chunks: ['main'],
-            minChunks: function (module) {
+            chunks: [ 'main' ],
+            minChunks: (module) => {
                 return module.context && module.context.indexOf('node_modules') !== -1;
             }            
         }),
@@ -56,14 +71,14 @@ module.exports = webpackMerge(common.config, {
             compress: {
                 screw_ie8: true,
                 warnings: false
-            },            
+            },
             comments: false
         })
 
     ],
 
     devServer: {
-        contentBase: OUTPUT_PATH,
+        contentBase: OUTPUT_PATH
     }
 
 });

@@ -1,9 +1,9 @@
-var webpack = require('webpack');
-var path = require('path');
-var webpackMerge = require('webpack-merge');
+const webpack = require('webpack');
+const path = require('path');
+const webpackMerge = require('webpack-merge');
 
 // common config
-var common = require('./webpack.common');
+const common = require('./webpack.common');
 
 // constants
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
@@ -20,13 +20,20 @@ module.exports = webpackMerge(common.config, {
 
     devtool: 'eval',
 
+    module: {
+        rules: [
+            { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
+            { test: /\.scss$/, use: [ 'style-loader', 'css-loader', 'sass-loader' ] }
+        ]
+    },
+
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV),
                 'API_URL': JSON.stringify(API_URL)
             }
-        }),
+        })
     ],
 
     devServer: {

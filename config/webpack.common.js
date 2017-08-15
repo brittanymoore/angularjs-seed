@@ -1,7 +1,5 @@
-var webpack = require('webpack');
-
 // plugins
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // constants
 const APP_NAME = 'AngularJS Vertex';
@@ -11,7 +9,7 @@ exports.publicPath = '';
 
 exports.config = {
 
-    entry: { 
+    entry: {
         main: './src/app/app.module.js'
     },
 
@@ -25,10 +23,9 @@ exports.config = {
         rules: [
             {
                 test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
-                options: { presets: ['es2015' ]}
+                options: { presets: [ 'es2015' ]}
             },
             { test: /\.html$/, loader: 'raw-loader' },
-            { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
     },
 
@@ -36,7 +33,7 @@ exports.config = {
         new HtmlWebpackPlugin({
             title: APP_NAME,
             template: './config/index.template.ejs',
-            chunksSortMode: 'dependency'            
+            chunksSortMode: 'dependency'
         })
     ],
 
@@ -45,4 +42,4 @@ exports.config = {
         port: 3000
     }
 
-}
+};

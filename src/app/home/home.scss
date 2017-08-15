@@ -1,0 +1,23 @@
+#home {
+
+    & .route {
+        height: 100px;
+        width: 100px;
+        display: inline-table;
+        background-color: #472e74;
+        color: #ffffff;
+        text-decoration: none;
+        text-align: center;
+        margin-right: 5px;
+        vertical-align: middle;
+        &:visited, &:hover {
+            color: #ffffff;
+            text-decoration: none;    
+        }
+        & span {
+            display: table-cell;
+            vertical-align: middle;                
+        }
+    }
+
+}

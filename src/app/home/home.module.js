@@ -1,7 +1,7 @@
 import HomeComponent from './home.component';
 
 // styles
-import './home.css';
+import './home.scss';
 
 const MODULE_NAME = 'appHome';
 

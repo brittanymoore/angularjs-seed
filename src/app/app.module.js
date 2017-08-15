@@ -13,7 +13,7 @@ import uiRouter from '@uirouter/angularjs';
 import routes from './app.routes';
 
 // styles
-import './app.css';
+import './app.scss';
 
 const MODULE_NAME = 'app';
 

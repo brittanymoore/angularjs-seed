@@ -11,20 +11,18 @@ body, html {
     background-color: #2d1657;
     overflow: auto;
     padding: 0 10px;
-}
-
-#header h1 {
-    font-weight: normal;
-    margin: 0;
-    padding: 10px 0;
-    font-size: 24px;
-}
-
-#header a,
-#header a:visited,
-#header a:hover {
-    color: #ffffff;
-    text-decoration: none;
+    & h1 {
+        font-weight: normal;
+        margin: 0;
+        padding: 10px 0;
+        font-size: 24px;
+    }
+    & a,
+    & a:visited,
+    & a:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
 }
 
 #wrapper {
@@ -48,10 +46,9 @@ body, html {
     height: 50px;
     display: table;
     width: 100%;
-}
-
-#footer span {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 10px;
+    & span {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 10px;
+    }
 }
