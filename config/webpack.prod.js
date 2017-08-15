@@ -52,7 +52,7 @@ module.exports = webpackMerge(common.config, {
             chunks: [ 'main' ],
             minChunks: (module) => {
                 return module.context && module.context.indexOf('node_modules') !== -1;
-            }            
+            }
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',

@@ -3,15 +3,17 @@
 angularjs-vertex is a seed repository for angularjs and webpack. For angular (2.0+),
 see [angular-vertex](https://github.com/brittanymoore/angular-vertex).
 
-This repository has multiple branches with alternate configurations of the seed.
+Check out my [todo demo] for a more robust example including some functionality, tests, and mocking.
 
 The master branch contains:
 * angularJS
 * webpack
+* sass
 * component-based routing (@uirouter/angularjs)
 * ES6 support (babel)
 * unit testing with karma
 * end-to-end testing with protractor
+* linting with eslint
 
 ## Getting Started
 
@@ -67,20 +69,3 @@ webdriver-manager update
 npm run start
 npm run test:e2e
 ```
-
-### Mocking
-
-Vertex comes with a 'mock' module that provides backendless development for the rest of the application. It 
-currently contains mocks for the To-do module that can be used as a starting point. These mocks are also used
-in the e2e tests for the To-do module.
-
-By default, the services mock SharePoint REST API. You can substitute any other backend by updating
-the web service calls and helpers in todo/todo.service.js and mock/mock.service.js. 
-
-
-
-
-
-
-
-

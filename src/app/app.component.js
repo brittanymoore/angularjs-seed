@@ -5,7 +5,7 @@ class AppController {
 }
 
 const AppComponent = {
-    template: require('./app.html'),
+    template: require('./app.component.html'),
     controller: AppController,
     controllerAs: 'app'
 };

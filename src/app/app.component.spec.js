@@ -9,12 +9,12 @@ describe("app:", () => {
         beforeEach(() => {       
             angular.mock.module(app);
             angular.mock.inject(($componentController) => {
-                controller = $componentController('app', {});
+                controller = $componentController('myApp', {});
             });
         });
 
         it("Should set the title value on controller.", () => {
-            expect(controller.title).toBe("Vertex");
+            expect(controller).toBeTruthy();
         });
 
     });
