@@ -8,13 +8,13 @@ var common = require('./webpack.common');
 // constants
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 const API_URL = common.apiUrl;
-const OUTPUT_FOLDER = path.resolve(__dirname, './../dev');
+const OUTPUT_PATH = path.resolve(__dirname, './../dev');
 
 module.exports = webpackMerge(common.config, {
 
     output: {
         publicPath: '',
-        path: OUTPUT_FOLDER,
+        path: OUTPUT_PATH,
         pathinfo: true // devtool: eval
     },
 
@@ -30,7 +30,7 @@ module.exports = webpackMerge(common.config, {
     ],
 
     devServer: {
-        contentBase: OUTPUT_FOLDER
+        contentBase: OUTPUT_PATH
     }
 
 });

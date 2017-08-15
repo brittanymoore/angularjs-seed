@@ -1,9 +1,9 @@
 {
-    "name": "vertex-angularjs",
-    "version": "0.0.1",
+    "name": "angularjs-vertex",
+    "version": "1.0.0",
     "description": "seed project for angularJS",
     "license": "MIT",
-    "author": "Brittany Moore",
+    "author": "Brittany Moore <brittanymoore>",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/brittanymoore/vertex-angularjs.git"
@@ -14,7 +14,8 @@
         "start": "webpack-dev-server --env=dev --open --progress",
         "start:prod": "webpack-dev-server --env=prod --open --progress",
         "test": "karma start ./config/karma.conf.js",
-        "test:e2e": "protractor ./config/protractor.conf.js"
+        "test:e2e": "protractor ./config/protractor.conf.js",
+        "webdriver-manager": "webdriver-manager"
     },
     "dependencies": {
         "@uirouter/angularjs": "1.0.6",
