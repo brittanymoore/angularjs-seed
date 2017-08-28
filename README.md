@@ -3,7 +3,8 @@
 angularjs-seed is a seed repository for angularjs and webpack. For angular (2.0.0+),
 see [angular-seed](https://github.com/brittanymoore/angular-seed).
 
-Check out my [todo demo] for a more robust example including some functionality, tests, and mocking.
+Check out my [todo demo](https://github.com/brittanymoore/angularjs-demo-todo) for a more robust example 
+including some functionality, tests, and mocking.
 
 The master branch contains:
 * angularJS
