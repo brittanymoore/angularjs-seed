@@ -1,4 +1,4 @@
-# Angular Seed
+# AngularJS Seed
 
 angularjs-seed is a seed repository for angularjs and webpack. For angular (2.0.0+),
 see [angular-seed](https://github.com/brittanymoore/angular-seed).
