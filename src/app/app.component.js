@@ -1,8 +1,4 @@
-class AppController {
-    constructor() {
-        this.title = 'Vertex';
-    }
-}
+class AppController {}
 
 const AppComponent = {
     template: require('./app.component.html'),

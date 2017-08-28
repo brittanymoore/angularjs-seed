@@ -2,7 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // constants
-const APP_NAME = 'AngularJS Vertex';
+const APP_NAME = 'My App';
 
 exports.apiUrl = '';
 exports.publicPath = '';

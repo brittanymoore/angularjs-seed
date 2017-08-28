@@ -1,7 +1,7 @@
-# Vertex
+# Angular Seed
 
-angularjs-vertex is a seed repository for angularjs and webpack. For angular (2.0+),
-see [angular-vertex](https://github.com/brittanymoore/angular-vertex).
+angularjs-seed is a seed repository for angularjs and webpack. For angular (2.0.0+),
+see [angular-seed](https://github.com/brittanymoore/angular-seed).
 
 Check out my [todo demo] for a more robust example including some functionality, tests, and mocking.
 
@@ -20,8 +20,8 @@ The master branch contains:
 ### Get the Code
 
 ```
-git clone https://github.com/brittanymoore/angularjs-vertex.git
-cd angularjs-vertex
+git clone https://github.com/brittanymoore/angularjs-seed.git
+cd angularjs-seed
 npm install
 ```
 
