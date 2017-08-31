@@ -7,9 +7,6 @@ import AppComponent from './app.component';
 import uiRouter from '@uirouter/angularjs';
 import routes from './app-routing.config';
 
-// styles
-import './app.component.scss';
-
 const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [ uiRouter ])

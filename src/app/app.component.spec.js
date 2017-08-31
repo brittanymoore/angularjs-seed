@@ -1,22 +1,18 @@
 import app from './app.module';
 
-describe("app:", () => {
+describe('app', () => {
 
-    describe("App Controller:", () => {
+    let controller;
 
-        let controller;
-
-        beforeEach(() => {       
-            angular.mock.module(app);
-            angular.mock.inject(($componentController) => {
-                controller = $componentController('myApp', {});
-            });
+    beforeEach(() => {       
+        angular.mock.module(app);
+        angular.mock.inject(($componentController) => {
+            controller = $componentController('myApp', {});
         });
+    });
 
-        it("Should set the title value on controller.", () => {
-            expect(controller).toBeTruthy();
-        });
-
+    it('should get controller', () => {
+        expect(controller).toBeTruthy();
     });
 
 });

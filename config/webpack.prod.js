@@ -16,6 +16,7 @@ const OUTPUT_PATH = path.resolve(__dirname, './../dist');
 module.exports = webpackMerge(common.config, {
 
     output: {
+        filename: '[name].[chunkhash].js',
         publicPath: common.publicPath,
         path: OUTPUT_PATH
     },

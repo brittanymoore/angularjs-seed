@@ -13,6 +13,7 @@ const OUTPUT_PATH = path.resolve(__dirname, './../dev');
 module.exports = webpackMerge(common.config, {
 
     output: {
+        filename: '[name].bundle.js',
         publicPath: '',
         path: OUTPUT_PATH,
         pathinfo: true // devtool: eval

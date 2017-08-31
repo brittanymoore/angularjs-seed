@@ -14,7 +14,6 @@ exports.config = {
     },
 
     output: {
-        filename: '[name].[chunkhash].js',
         sourceMapFilename: '[name].map',
         chunkFilename: '[id].chunk.js'
     },
@@ -25,7 +24,7 @@ exports.config = {
                 test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/,
                 options: { presets: [ 'es2015' ]}
             },
-            { test: /\.html$/, loader: 'raw-loader' },
+            { test: /\.html$/, loader: 'raw-loader' }
         ]
     },
 
