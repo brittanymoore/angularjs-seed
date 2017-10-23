@@ -1,18 +1,23 @@
-import app from './app.module';
+import { appModule } from './app.module';
 
 describe('app', () => {
 
-    let controller;
+    let subjectElement;
+    let subjectController;
+    let scope;
 
     beforeEach(() => {       
-        angular.mock.module(app);
-        angular.mock.inject(($componentController) => {
-            controller = $componentController('myApp', {});
+        angular.mock.module(appModule);
+        angular.mock.inject(($compile, $rootScope) => {
+            subjectElement = $compile(`<my-app></my-app>`)($rootScope.$new());
+            subjectController = subjectElement.controller('myApp');
+            scope = subjectElement.isolateScope();
         });
     });
 
-    it('should get controller', () => {
-        expect(controller).toBeTruthy();
+    it('should initialize', () => {
+        expect(subjectElement).toBeTruthy();
+        expect(subjectController).toBeTruthy();
     });
 
 });

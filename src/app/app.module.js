@@ -1,16 +1,12 @@
-import angular from 'angular';
+import * as angular from 'angular';
 
-// app component
-import AppComponent from './app.component';
+import { appComponent, appSelector } from './app.component';
 
-// routing
-import uiRouter from '@uirouter/angularjs';
-import routes from './app-routing.config';
+import { default as uiRouter } from '@uirouter/angularjs';
+import { routeConfig } from './app-routing.config';
 
-const MODULE_NAME = 'app';
+export const appModule = 'app';
 
-angular.module(MODULE_NAME, [ uiRouter ])
-    .component('myApp', AppComponent)
-    .config(routes.config);
-
-export default MODULE_NAME;
+angular.module(appModule, [ uiRouter ])
+    .component(appSelector, appComponent)
+    .config(routeConfig);

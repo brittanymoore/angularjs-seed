@@ -1,4 +1,4 @@
-const config = ($stateProvider, $urlRouterProvider, $locationProvider) => {
+export const routeConfig = ($stateProvider, $urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('home', { url: '/' });
@@ -7,10 +7,4 @@ const config = ($stateProvider, $urlRouterProvider, $locationProvider) => {
     $locationProvider.html5Mode(true);
 };
 
-config.$inject = [ '$stateProvider', '$urlRouterProvider', '$locationProvider' ];
-
-const routes = {
-    config: config
-};
-
-export default routes;
+routeConfig.$inject = [ '$stateProvider', '$urlRouterProvider', '$locationProvider' ];

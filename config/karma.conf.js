@@ -1,6 +1,19 @@
+const webpackConfig = require('./webpack.dev');
+webpackConfig.output = {};
+webpackConfig.module.rules.push({ 
+    test: /\.js$/, loader: 'istanbul-instrumenter-loader', enforce: 'post', exclude: [ /node_modules|\.spec\.js$/, /karma.test.bundle/ ] 
+});
+
 module.exports = function (config) {
     config.set({
         basePath: '',
+        browsers: ['Chrome'],        
+        client: {
+            clearContext: false
+        },
+        coverageReporter: {
+            type: 'text'
+        },
         frameworks: ['jasmine'],
         files: [
             { pattern: './karma.test.bundle.js' }
@@ -8,18 +21,12 @@ module.exports = function (config) {
         preprocessors: {
             './karma.test.bundle.js': ['webpack', 'sourcemap']
         },
-        webpack: require('./webpack.dev.js'),
-        reporters: ['spec'],
+        reporters: ['spec', 'coverage'],
         specReporter: {
             failFast: true,
             suppressErrorSummary: true
         },
-        port: 9876,
-        colors: true,
-        logLevel: config.LOG_INFO,
-        autoWatch: false,
-        browsers: ['Chrome'],
-        singleRun: true,
-        concurrency: Infinity
+        singleRun: false,
+        webpack: require('./webpack.dev.js')        
     });
 }
