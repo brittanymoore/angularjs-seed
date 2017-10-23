@@ -34,16 +34,14 @@ To run the app in development mode:
 npm run start
 ```
 
-Once the server is running, open a browser and navigate to localhost:3000.
-
 ### Build
 
-| Build Mode        | Command        | Output   | Uglify |
+| Build Mode        | Command(s)     | Output   | Uglify |
 | ----------------- | -------------- | -------  | ------ |
 | Dev               | build          | dev      | false  |
+|                   | start          |          |        |
 | Prod              | build:prod     | dist     | true   |
-
-Each mode has a start command that launches webpack-dev-server.
+|                   | start:prod     |          |        |
 
 ```
 npm run start
