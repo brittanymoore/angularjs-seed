@@ -7,7 +7,7 @@ describe('app', () => {
     let scope;
 
     beforeEach(() => {       
-        angular.mock.module(appModule);
+        angular.mock.module(appModule.name);
         angular.mock.inject(($compile, $rootScope) => {
             subjectElement = $compile(`<my-app></my-app>`)($rootScope.$new());
             subjectController = subjectElement.controller('myApp');
@@ -15,7 +15,7 @@ describe('app', () => {
         });
     });
 
-    it('should initialize', () => {
+    it('should create component', () => {
         expect(subjectElement).toBeTruthy();
         expect(subjectController).toBeTruthy();
     });
