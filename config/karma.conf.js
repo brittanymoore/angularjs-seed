@@ -1,4 +1,6 @@
-const webpackConfig = require('./webpack.dev');
+const getWebpackConfig = require('./../webpack.config');
+
+webpackConfig = getWebpackConfig('dev');
 webpackConfig.output = {};
 webpackConfig.module.rules.push({ 
     test: /\.js$/, loader: 'istanbul-instrumenter-loader', enforce: 'post', exclude: [ /node_modules|\.spec\.js$/, /karma.test.bundle/ ] 
@@ -27,6 +29,6 @@ module.exports = function (config) {
             suppressErrorSummary: true
         },
         singleRun: false,
-        webpack: require('./webpack.dev.js')        
+        webpack: webpackConfig        
     });
 }

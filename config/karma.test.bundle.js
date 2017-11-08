@@ -1,7 +1,6 @@
 import 'angular';
 import 'angular-mocks/angular-mocks';
 
-// Make sure Karma is running correctly.
 describe('Sanity Check:', () => {
 
     it('Karma is working.', () => {
@@ -10,6 +9,5 @@ describe('Sanity Check:', () => {
 
 });
 
-// Search for and run all .spec.js files in src/app.
 const context = require.context('./../src', true, /\.spec.js$/);
-context.keys().forEach(context);
+context.keys().map(context);
